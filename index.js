@@ -1,5 +1,6 @@
 const formBtn = document.getElementById('close-form');
 const form = document.querySelector('.form');
+const signupBtn = document.querySelector('.sign-up');
 
 const nameInput = document.querySelector('#name');
 const emailInput = document.querySelector('#email');
@@ -16,6 +17,9 @@ function toggler(){
     form.classList.toggle('hide');
     formBtn.innerText === 'X' ? formBtn.innerText = '+' : formBtn.innerText = 'X';
 }
+
+formBtn.onclick = toggler;
+
 
 function validateForm(){
     if (!nameInput.value && !emailInput.value) {
@@ -38,6 +42,9 @@ function validateForm(){
         displayThankYou();
     }
 }
+
+signupBtn.onclick = validateForm;
+console.log(signupBtn);
 
 const displayThankYou = function(){
     formContainer.innerText = 'Thank you for subscribing!';
@@ -73,4 +80,10 @@ const addToCart = function(){
         cart.style.color = 'black';
         cart.style.fontSize = '16px';
     }, 500)
+}
+
+const cartBtns = document.querySelectorAll('.product-card > button');
+// cartBtns.onclick = addToCart();
+for (let i = 0; i < cartBtns.length; i++) {
+    cartBtns[i].onclick = addToCart;
 }
