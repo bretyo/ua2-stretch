@@ -22,14 +22,14 @@
 
         <div class="form-container">
             <p class="sub-intro">subscribe to our<br>mailing list</p>
-            <h3 id="close-form">X</h3>
+            <h3 id="close-form" onclick="toggler()">X</h3>
 
             <form class="form">
                 <label for="name" >enter your name:</label>
                 <input type="text" placeholder="name" id="name"/>
                 <label for="email">enter your email:</label>
-                <input type="text" placeholder="email"/>
-                <button>sign up</button>
+                <input type="text" id="email" placeholder="email"/>
+                <button onclick="validateForm()">sign up</button>
             </form>
         </div>
     </header>
@@ -53,4 +53,5 @@
         </section>
     </main>
 </body>
+<script src="index.js"></script>
 </html>
